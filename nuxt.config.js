@@ -34,6 +34,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
+    'nuxt-vue-select',
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

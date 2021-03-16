@@ -5,11 +5,31 @@
       <h1 class="title">
         remed.io
       </h1>
-      
-<div class="main">
-  
+      <div v-if="block">
+
+        <div class="main">
+        <h1>Escolha a sua profissão</h1>
+          <v-select  v-model="selected" :options="options" @input="setSelected"></v-select>
+
+        <div v-if="crm" class="form-group has-search">
+            <span class="fa fa-search form-control-feedback"></span>
+            <input type="text"  v-model="Ncrm"   class="form-control" placeholder="Digite o numero do deu CRM aqui">
+          <br>
+            <button type="button"   v-on:click="setCrm" class="btn btn-primary">adicionar</button>
+          </div>
+          <!-- <select  v-model="prof"  class="form-control">
+              <option value=""><span class="flag-icon flag-icon-gr"></span>Selecione a sua profissão</option>
+              <option> Médico </option>
+              <option>Farmaeutico</option>
+              <option>Enfermeiro</option>
+            </select> -->
+        </div>
+
+
+      </div>
+
   <!-- Actual search box -->
-  <div class="form-group has-search">
+  <div v-if="search" class="form-group has-search">
     <span class="fa fa-search form-control-feedback"></span>
     <input type="text"  v-model="remedio"   class="form-control" placeholder="Pesquise aqui">
    <br>
@@ -29,15 +49,39 @@
 </template>
 
 <script>
+
+import 'vue-select/dist/vue-select.css';
+
 export default { 
    data() {
     return {
 
     remedio: '',
     msg:'',
+    search:false,
+    crm:false,
+    prof:'',
+    options: [
+      'Médico',
+      'Farmaeutico',
+      'Enfermeiro'
+    ],
+    Ncrm: '',
+    selected:'',
+    block:true
     };
   },
   methods: {
+    setSelected: function(value){
+      console.log(value);
+      this.crm=true;
+
+    },
+    setCrm(){
+      
+      this.search=true
+      this.block=false
+    },
     pesquisar: function () {
       console.log("pesquisando");
       console.log(this.remedio)
@@ -70,6 +114,10 @@ export default {
 
 <style>
 /* Styles for wrapping the search box */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+select{
+    font-family: 'FontAwesome' , 'TATSanaChon';
+}
 
 .main {
     width: 100%;
