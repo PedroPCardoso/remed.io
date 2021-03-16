@@ -17,7 +17,7 @@
   </div>
   
 
-  <h4> {{diagnostico}}</h4>
+  <h4> {{msg}}</h4>
   
 </div>
 
@@ -28,22 +28,26 @@
 
 <script>
 export default { 
-   data: {
-    remedio: 'Pesquise aqui',
-    dignostico:'',
+   data() {
+    return {
+
+    remedio: '',
+    msg:'',
+    };
   },
   methods: {
     pesquisar: function () {
       console.log("pesquisando");
       var listaConsenso = {
-        "lorazepam para o idosos":   "acordo ao consenso brasileiro é inapropriado para idosos pois causa dependência e risco de queda.",
+        "lorazepam":   "acordo ao consenso brasileiro é inapropriado para idosos pois causa dependência e risco de queda.",
         "two":   2,
         "three": 3,
         "four":  4,
         "five":  5
       }
-      this.dignostico=listaConsenso[this.remedio];
-      console.log(this.dignostico);
+      
+      this.msg=listaConsenso[this.remedio];
+      console.log(this.msg);
       // alert(listaConsenso[this.remedio])
     }
   }
