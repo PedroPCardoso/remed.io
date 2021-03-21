@@ -1,22 +1,29 @@
 <template>
   <div class="container">
     <div>
-      <Logo />
+      <!-- <Logo />
       <h1 class="title">
         CONSULTEMIPs
-      </h1>
+      </h1> -->
+      <div>
+
+        <img src='~/assets/logo.png'>
+      </div>
       <div v-if="block">
 
         <div class="main">
         <h1>Escolha a sua profissão</h1>
           <v-select  v-model="selected" :options="options" @input="setSelected"></v-select>
 
+<div v-if="selected=='Médico'">
         <div v-if="crm" class="form-group has-search">
             <span class="fa fa-search form-control-feedback"></span>
             <input type="text"  v-model="Ncrm"   class="form-control" placeholder="Digite o numero do deu CRM aqui">
           <br>
             <button type="button"   v-on:click="setCrm" class="btn btn-primary">adicionar</button>
           </div>
+        </div>
+        </div>
 
 
 
@@ -26,13 +33,12 @@
               <option>Farmaeutico</option>
               <option>Enfermeiro</option>
             </select> -->
-        </div>
 
 
       </div>
 
   <!-- Actual search box -->
-  <div v-if="search" class="form-group has-search">
+  <div v-if="search || selected!='Médico' &&  selected!=''" class="form-group has-search">
     <span class="fa fa-search form-control-feedback"></span>
     <input type="text"  v-model="remedio"   class="form-control" placeholder="Pesquise aqui">
    <br>
@@ -47,7 +53,7 @@
 <br>
 
 <br>
-    <button type="button" v-if="newSearch&& search && remedio"  v-on:click="FormComentario" class="btn btn-primary">Adicionar Comentário</button>
+    <button type="button" v-if="newSearch && search && remedio && crm"  v-on:click="FormComentario" class="btn btn-primary">Adicionar Comentário</button>
 <br>
 <br>
 
@@ -158,7 +164,7 @@ export default {
       this.newSearch=true
       console.log(this.msg);
       console.log(this.newComents);
-
+      this.block=false
       // alert(listaConsenso[this.remedio])
     }
   }
