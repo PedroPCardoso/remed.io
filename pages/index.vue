@@ -3,7 +3,7 @@
     <div>
       <Logo />
       <h1 class="title">
-        remed.io
+        CONSULTEMIPs
       </h1>
       <div v-if="block">
 
@@ -17,6 +17,9 @@
           <br>
             <button type="button"   v-on:click="setCrm" class="btn btn-primary">adicionar</button>
           </div>
+
+
+
           <!-- <select  v-model="prof"  class="form-control">
               <option value=""><span class="flag-icon flag-icon-gr"></span>Selecione a sua profissão</option>
               <option> Médico </option>
@@ -38,8 +41,23 @@
   
 
   <h6> {{msg}}</h6>
+<br>
+
+  <h6> {{msg2}}</h6>
+<br>
+
+<br>
+    <button type="button" v-if="newSearch&& search && remedio"  v-on:click="FormComentario" class="btn btn-primary">Adicionar Comentário</button>
+<br>
+<br>
 
 
+ <div v-if="block2" class="form-group has-search">
+    <span class="fa fa-search form-control-feedback"></span>
+    <input type="text"  v-model="newComent"   class="form-control" placeholder="Adicionar novo comentário">
+   <br>
+    <button type="button"   v-on:click="AdicionarComentario" class="btn btn-primary">Adicionar</button>
+  </div>
   
 </div>
 
@@ -51,6 +69,7 @@
 <script>
 
 import 'vue-select/dist/vue-select.css';
+import VueCookies from 'vue-cookies';
 
 export default { 
    data() {
@@ -68,7 +87,12 @@ export default {
     ],
     Ncrm: '',
     selected:'',
-    block:true
+    block:true,
+    block2:false,
+    newSearch:false,
+    newComent:'',
+    newComents: {},
+    msg2:''
     };
   },
   methods: {
@@ -82,9 +106,27 @@ export default {
       this.search=true
       this.block=false
     },
+    FormComentario(){
+      this.block2=true
+    },
+    AdicionarComentario(){
+      
+      var json_str = $cookies.get('mycookie');
+      
+      if(json_str){
+        var arr = JSON.parse(JSON.stringify(json_str));
+        this.newComents=arr
+      }
+      this.newComents[this.remedio]=this.newComent
+      var json_str = JSON.stringify(this.newComents);
+      $cookies.set('mycookie', json_str);
+      this.block2=false;
+
+    },
     pesquisar: function () {
       console.log("pesquisando");
       console.log(this.remedio)
+      this.msg2='';
       var listaConsenso = {
         "lorazepam":   "acordo ao consenso brasileiro é inapropriado para idosos pois causa dependência e risco de queda.",
         "biperideno":   "Risco de toxicidade anticolinérgica.",
@@ -103,9 +145,20 @@ export default {
         "Prometazina":"Risco de sedação e efeitos anticolinérgicos (confusão, boca seca, constipação, entre outros). Há o desenvolvimento de tolerância, quando utilizados como hipnótico.",
         "Triprolidina":"Risco de sedação e efeitos anticolinérgicos (confusão, boca seca, constipação, entre outros). Há o desenvolvimento de tolerância, quando utilizados como hipnótico.",
       }
-      
+      // this.newComents.push({
+      //   key:this.remedio,
+      //   value:"vazio"
+      // })
       this.msg=listaConsenso[this.remedio];
+      if(this.newComents[this.remedio]){
+        this.msg2=this.newComents[this.remedio];
+        console.log(this.msg2);
+
+      }
+      this.newSearch=true
       console.log(this.msg);
+      console.log(this.newComents);
+
       // alert(listaConsenso[this.remedio])
     }
   }
