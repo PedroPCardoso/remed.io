@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <div>
+      <title>ConsulteMIP'S</title>
       <!-- <Logo />
       <h1 class="title">
         CONSULTEMIPs
@@ -192,6 +193,12 @@ export default {
       //   key:this.remedio,
       //   value:"vazio"
       // })
+      var json_str = $cookies.get('mycookie');
+      
+      if(json_str){
+        var arr = JSON.parse(JSON.stringify(json_str));
+        this.newComents=arr
+      }
       this.msg=listaConsenso[this.remedio];
       if(this.newComents[this.remedio]){
         this.msg2=this.newComents[this.remedio];
