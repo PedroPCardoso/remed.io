@@ -89,7 +89,7 @@ export default {
     prof:'',
     options: [
       'Médico',
-      'Farmaceutico',
+      'Farmacêutico',
       'Dentista'
     ],
     Ncrm: '',
