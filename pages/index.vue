@@ -19,7 +19,7 @@
 <div v-if="selected=='Médico'">
         <div v-if="crm" class="form-group has-search">
             <span class="fa fa-search form-control-feedback"></span>
-            <input type="text"  v-model="Ncrm"   class="form-control" placeholder="Digite o numero do deu CRM aqui">
+            <input type="text"  v-model="Ncrm"   class="form-control" placeholder="Digite o numero do seu CRM aqui">
           <br>
             <button type="button"   v-on:click="setCrm" class="btn btn-primary">adicionar</button>
           </div>
@@ -89,8 +89,8 @@ export default {
     prof:'',
     options: [
       'Médico',
-      'Farmaeutico',
-      'Enfermeiro'
+      'Farmaceutico',
+      'Dentista'
     ],
     Ncrm: '',
     selected:'',
