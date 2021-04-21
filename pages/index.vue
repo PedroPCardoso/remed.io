@@ -229,6 +229,20 @@ export default {
         "Nitrofurantoína": "Potencial para toxicidade pulmonar. Apresenta perda de eficácia em pacientes com ClCr < 60 mL/min devido à concentração inadequada do fármaco na urina. Há alternativas mais seguras disponíveis.",
         "Betametasona": "Exposição desnecessária aos efeitos adversos de longo prazo dos corticosteroides sistêmicos.", "Deflazacorte": "Exposição desnecessária aos efeitos adversos de longo prazo dos corticosteroides sistêmicos.", "Dexametasona": "Exposição desnecessária aos efeitos adversos de longo prazo dos corticosteroides sistêmicos.", "Hidrocortisona": "Exposição desnecessária aos efeitos adversos de longo prazo dos corticosteroides sistêmicos.", "Metilprednisolona": "Exposição desnecessária aos efeitos adversos de longo prazo dos corticosteroides sistêmicos.", "Prednisolona": "Exposição desnecessária aos efeitos adversos de longo prazo dos corticosteroides sistêmicos.", "Prednisona": "Exposição desnecessária aos efeitos adversos de longo prazo dos corticosteroides sistêmicos.",
         "Teofilina": "Existência de alternativa mais segura e efetiva. Além disso, risco de efeitos adversos devido ao índice terapêutico estreito.",
+
+      // Lista 2
+
+      ' Aspirina': ' Alto risco de sangramento em pacientes com distúrbio hemorrágico concomitante.', ' Clopidogrel': ' Alto risco de sangramento em pacientes com distúrbio hemorrágico concomitante.', ' Dipiridamol': ' Alto risco de sangramento em pacientes com distúrbio hemorrágico concomitante..', 
+      ' Varfarina': ' Alto risco de sangramento em pacientes com distúrbio hemorrágico concomitante.',
+      'Amitriptilina': ' Efeitos pró-arrítmicos ', ' Imipramina': ' Efeitos pró-arrítmicos ', ' Nortriptilina': ' Efeitos pró-arrítmicos ', ' Clomipramina': ' Efeitos pró-arrítmicos ',
+      'Diltiazem': ' Podem agravar a constipação ', ' Verapamil': ' Podem agravar a constipação ',
+      'Clorpromazina': ' Podem agravar a constipação devido à forte ação anticolinérgica ', ' Clozapina': ' Podem agravar a constipação devido à forte ação anticolinérgica ', ' Flufenazina': ' Podem agravar a constipação devido à forte ação anticolinérgica ', ' Olanzapina': ' Podem agravar a constipação devido à forte ação anticolinérgica ', ' Pimozida': ' Podem agravar a constipação devido à forte ação anticolinérgica ', ' Prometazina': ' Podem agravar a constipação devido à forte ação anticolinérgica ', ' Tioridazina': ' Podem agravar a constipação devido à forte ação anticolinérgica ', ' Trifluoperazina': ' Podem agravar a constipação devido à forte ação anticolinérgica ',
+      'Amitriptilina': ' Podem agravar a constipação devido à forte ação anticolinérgica ', ' Imipramina': ' Podem agravar a constipação devido à forte ação anticolinérgica ', ' Nortriptilina': ' Podem agravar a constipação devido à forte ação anticolinérgica ', ' Clomipramina': ' Podem agravar a constipação devido à forte ação anticolinérgica ',
+      'Morfina': ' Risco de constipação grave ', ' Oxicodona': ' Risco de constipação grave ', ' Codeína': ' Risco de constipação grave ', ' Petidina': ' Risco de constipação grave ', ' Fentanil': ' Risco de constipação grave ', ' Sufentanil': ' Risco de constipação grave ', ' Nalbufina': ' Risco de constipação grave ', ' Tramadol': ' Risco de constipação grave ',
+      'Biperideno': ' Podem agravar a constipação devido à forte ação anticolinérgica. ', 'Triexifenidil': ' Podem agravar a constipação devido à forte ação anticolinérgica. ',
+      'Carisoprodol': ' Podem agravar a constipação devido à forte ação anticolinérgica. ', ' Ciclobenzaprina': ' Podem agravar a constipação devido à forte ação anticolinérgica. ', ' Orfenadrina': ' Podem agravar a constipação devido à forte ação anticolinérgica. ', ' Tizanidina': ' Podem agravar a constipação devido à forte ação anticolinérgica. '
+
+
       }
       // this.newComents.push({
       //   key:this.remedio,

@@ -1,12 +1,18 @@
 <?php
 
-$conto="Alprazolam, Bromazepam, Clobazam, Clonazepam, Clordiazepóxido, Cloxazolam, Diazepam, Estazolam, Flunitrazepam, Flurazepam, Lorazepam, Midazolam, Nitrazepam.";
-	
-$arr = explode(',',$conto);
+$conto="nimesulida";
 
+$resposta = "alto risco de hepatotoxicidade. Não oferece vantagem terapêutica ou melhor segurança gastrointestinal em comparação com outros AINEs, ao passo que expõe os pacientes a um risco maior de distúrbios hepáticos fatais.";
+$arr = explode(',',$conto);
+$error = "<div> <b > Exceção</b>  
+A nimesulida está associada a um risco ligeiramente aumentado de hepatotoxicidade, que aumenta com o tempo de exposição e a dosagem. Recomenda-se a restrição do seu uso ao tratamento da dor aguda, tratamento sintomático da osteoartrite dolorosa e dismenorreia primária.
+
+</div>";
 $i=0;
 while( $i <= count($arr) ){
 	echo "'$arr[$i]'";
-	echo ": 'Em geral, os benzodiazepínicos aumentam o risco de comprometimento cognitivo, delirium, quedas, fraturas e acidentes automobilísticos. Evitar todos os benzodiazepínicos para tratar insônia, agitação ou delirium.',\n";
+    echo ": '$resposta  $error',\n";
+
+// 	echo ":'$resposta',\n";
 	$i++;	
 }
