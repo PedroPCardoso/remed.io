@@ -34,6 +34,14 @@
           </div>
         </div>
 
+<div v-if="selected=='Dentista'">
+        <div v-if="crf" class="form-group has-search">
+            <span class="fa fa-search form-control-feedback"></span>
+            <input type="text"  v-model="Ncrf"   class="form-control" placeholder="Digite o numero do seu CRD aqui">
+          <br>
+            <button type="button"   v-on:click="setCrf" class="btn btn-primary">adicionar</button>
+          </div>
+        </div>
 
 
 
