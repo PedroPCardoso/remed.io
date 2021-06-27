@@ -62,6 +62,12 @@
 
   <!-- Actual search box -->
   <div v-if="search &&  selected!=''" class="form-group has-search">
+    <div v-if="doctor">
+      <span>
+        Dr Luiz Antônio de Andrade Silva
+      </span>
+    </div>
+
     <span class="fa fa-search form-control-feedback"></span>
     <input type="text"  v-model="remedio"   class="form-control" placeholder="Pesquise aqui">
    <br>
@@ -147,12 +153,17 @@ export default {
       }
     },
     setCrm(){
-      
+      console.log(this.Ncrm);
+      console.log(this.Ncrm);
+      console.log(this.Ncrm);
+      if(this.Ncrm=='3344'){
+        this.doctor=true;
+      }
       this.search=true
       this.block=false
     },
     setCrf(){
-      
+      this.doctor=false;
       this.search=true
     
     },
@@ -349,6 +360,7 @@ export default {
       this.newSearch=true
       console.log(this.msg);
       console.log(this.newComents);
+      
       this.block=false
       // alert(listaConsenso[this.remedio])
     }
