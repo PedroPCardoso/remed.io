@@ -61,7 +61,7 @@
       </div>
 
   <!-- Actual search box -->
-  <div v-if="search &&  selected!=''" class="form-group has-search">
+  <div v-if="(search &&  selected!='')  || ( selected=='Estudante')" class="form-group has-search">
     <div v-if="doctor">
       <span>
         Dr Luiz Antônio de Andrade Silva
@@ -128,7 +128,8 @@ export default {
     options: [
       'Médico',
       'Farmacêutico',
-      'Dentista'
+      'Dentista',
+      'Estudante'
     ],
     Ncrm: '',
     Ncro:'',
